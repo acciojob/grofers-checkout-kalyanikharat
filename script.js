@@ -7,8 +7,8 @@
     let prices = document.querySelectorAll(".price");
     let totalsum = 0;
 
-    prices.forEach((priceEL) => {
-      totalsum += parseFloat(priceEL.textContent);
+    prices.forEach(priceEL => {
+      totalsum += parseInt(priceEL.textContent,10);
     });
 
     let newRow = document.createElement("tr");
@@ -17,6 +17,7 @@
     totalCell.setAttribute("colspan", "2");
     totalCell.style.textAlign = "center";
     totalCell.textContent = `Total Price: Rs ${totalsum}`;
+	totalCell.id = "ans";
 
     newRow.appendChild(totalCell);
 
